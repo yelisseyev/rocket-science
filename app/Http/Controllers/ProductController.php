@@ -13,10 +13,4 @@ class ProductController extends Controller
         $products = Product::filter($request->all())->paginate(Product::PER_PAGE);
         return response()->json($products);
     }
-
-    public function properties()
-    {
-        $properties = Property::allProperties()->get();
-        return response()->json($properties);
-    }
 }
